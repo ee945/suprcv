@@ -11,3 +11,5 @@ application/logs/*
 !application/logs/.htaccess
 
 application/views/test.php
+application/controllers/test.php
+application/models/test.php
