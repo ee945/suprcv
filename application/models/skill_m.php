@@ -15,4 +15,21 @@ class Skill_m extends CI_Model
         return $query->result_array();
     }
 
+    //通过cvid查找记录，并分组获得全部技能类别列表
+    public function getgroup($cvid)
+    {
+        $this->db->group_by('skill_group');
+        $this->db->order_by('skill_order','asc');
+        $query=$this->db->get_where('cv_skill',array('cvid'=>$cvid));
+        return $query->result_array();
+    }
+
+    //按cvid查找某个group下全部记录
+    public function getbygroup($cvid,$group)
+    {
+        $this->db->order_by('skill_order','asc');
+        $query=$this->db->get_where('cv_skill',array('cvid'=>$cvid,'skill_group'=>$group));
+        return $query->result_array();
+    }
+
 }

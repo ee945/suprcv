@@ -94,31 +94,27 @@
 						<!-- SECTION 1 - HOMEPAGE -->
 						<section class="no-display flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
 							<div class="profile" id="1">
-								<h2 class="animated fadeInDown">Hello, I am <span>Robb Armstrong</span><br>Designer and Front-end Developer</h2>
+								<h2 class="animated fadeInDown">Hello, I am <span><?php echo $cv['cv_user_name'];?></span><br><?php echo $cv['cv_user_title'];?></h2>
 								<div class="sep1"></div>
-								<p class="animated fadeInDown">I have ten years experience as a web/interface designer. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS and (X)HTML for modern websites. I have a reasonable grasp of using JavaScript frameworks, specifically jQuery.</p>
+								<p class="animated fadeInDown"><?php echo $cv['cv_descp'];?></p>
 								<div class="personal-info col-md-12 no-padding animated flipInX">
 									<h4>Personal Info</h4>
 									<div class="sep2"></div>
 									<ul>
 										<li>
-											<div class="p-info"><em>name</em><span>Robb Armstrong</span></div>
+											<div class="p-info"><em>name</em><span><?php echo $cv['cv_user_name'];?></span></div>
 										</li>
 										<li>
-											<div class="p-info"><em>date of birth</em><span>September 06, 1976</span></div>
+											<div class="p-info"><em>date of birth</em><span><?php echo $user_birth;?></span></div>
 										</li>
 										<li>
-											<div class="p-info"><em>e-mail</em><span>info@yourdomain.com</span></div>
+											<div class="p-info"><em>e-mail</em><span><?php echo $cv['cv_user_mail'];?></span></div>
 										</li>
+										<?php foreach($info as $info_i):?>
 										<li>
-											<div class="p-info"><em>address</em><span>121 King St, Melbourne VIC</span></div>
+											<div class="p-info"><em><?php echo $info_i['info_title'];?></em><span><?php echo $info_i['info_content'];?></span></div>
 										</li>
-										<li>
-											<div class="p-info"><em>phone</em><span>012-3456-7890</span></div>
-										</li>
-										<li>
-											<div class="p-info"><em>website</em><span>www.themeforest.net</span></div>
-										</li>
+										<?php endforeach ?>
 									</ul>
 								</div>
 								<div class="clearfix"></div>
@@ -150,98 +146,52 @@
 									<h4>Work Experience</h4>
 									<div class="sep2"></div>
 									<ul>
+										<?php foreach($work as $work_i):?>
 										<li>
-											<h5>Themeforest</h5>
-											<span class="year"><i class="fa fa-calendar"></i> 2009 - 2014</span>
-											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+											<h5><?php echo $work_i['work_company'];?></h5>
+											<span class="year"><i class="fa fa-calendar"></i>&nbsp;<?php echo $work_i['work_start'];?>&nbsp;-&nbsp;<?php echo $work_i['work_end'];?></span>
+											<p><?php echo $work_i['work_descp'];?></p>
 										</li>
-										<li>
-											<h5>Video Hive</h5>
-											<span class="year"><i class="fa fa-calendar"></i> 2005 - 2008</span>
-											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
-										</li>
-										<li>
-											<h5>Graphic River</h5>
-											<span class="year"><i class="fa fa-calendar"></i> 2001 - 2004</span>
-											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
-										</li>
+										<?php endforeach ?>
 									</ul>
 								</div>
 								<div class="resume-info animated slideInLeft">
 									<h4>Education</h4>
 									<div class="sep2"></div>
 									<ul>
-										<li>
-											<h5>Web Design School</h5>
-											<span class="year"><i class="fa fa-calendar"></i> 2009 - 2012</span>
-											<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
-										</li>
-										<li>
-											<h5>IT Technical Institute</h5>
-											<span class="year"><i class="fa fa-calendar"></i> 2005 - 2008</span>
-											<p>Information technology (IT) workers can be found in many types of organizations. According to the U.S. Department of Labor, "In the modern workplace, it is imperative that Information Technology (IT) works both effectively and reliably</p>
-										</li>
-										<li>
-											<h5>Academy of Art University</h5>
-											<span class="year"><i class="fa fa-calendar"></i> 2001 - 2004</span>
-											<p>Academy of Art University's School of Web Design &amp; New Media is the intersection between traditional design and new technologies.</p>
-										</li>
+										<?php foreach($edu as $edu_i):?>
+											<li>
+												<h5><?php echo $edu_i['edu_school'];?></h5>
+												<span class="year"><i class="fa fa-calendar"></i>&nbsp;<?php echo $edu_i['edu_start'];?>&nbsp;-&nbsp;<?php echo $edu_i['edu_end'];?></span>
+												<p><?php echo $edu_i['edu_descp'];?></p>
+											</li>
+										<?php endforeach ?>
 									</ul>
 								</div>
+								<?php foreach($sgroup as $sgroup_i): ?>
 								<div class="skills-info">
-									<h4>Skills</h4>
+									<h4><?php echo $sgroup_i['skill_group'];?>:</h4>
 									<div class="sep2"></div>
 									<ul>
+										<?php foreach($skill[$sgroup_i['skill_group']] as $s_item):?>
 										<li>
-											<p>Wordpress Development <span>71%</span></p>
-											<div class="skills-bg"><span class="skill1" style="width: 71%;"></span></div>
+											<p><?php echo $s_item['skill_name'];?><span><?php echo $s_item['skill_value'];?>%</span></p>
+											<div class="skills-bg"><span class="<?php echo $sgroup_i['skill_group'];?>" style="width: <?php echo $s_item['skill_value'];?>%;"></span></div>
 										</li>
-										<li>
-											<p>Photoshop <span>85%</span></p>
-											<div class="skills-bg"><span class="skill2" style="width: 85%;"></span></div>
-										</li>
-										<li>
-											<p>HTML5/CSS3 <span>76%</span></p>
-											<div class="skills-bg"><span class="skill3" style="width: 76%;"></span></div>
-										</li>
-										<li>
-											<p>Ruby on Rails <span>53%</span></p>
-											<div class="skills-bg"><span class="skill4" style="width: 53%;"></span></div>
-										</li>
-										<li>
-											<p>Social Marketing <span>69%</span></p>
-											<div class="skills-bg"><span class="skill5" style="width: 69%;"></span></div>
-										</li>
+										<?php endforeach ?>
 									</ul>
 								</div>
+								<?php endforeach ?>
 								<div class="services-info">
 									<h4>Services</h4>
 									<div class="sep2"></div>
 									<ul>
+										<?php foreach ($serv as $serv_i):?>
 										<li class="animated flipInX">
-											<i class="fa fa-cloud"></i>
-											<h5>Design</h5>
+											<i class="<?php echo $serv_i['serv_icon'];?>"></i>
+											<h5><?php echo $serv_i['serv_name'];?></h5>
 										</li>
-										<li class="animated flipInX">
-											<i class="fa fa-smile-o"></i>
-											<h5>Coding</h5>
-										</li>
-										<li class="animated flipInX">
-											<i class="fa fa-desktop"></i>
-											<h5>Responsive</h5>
-										</li>
-										<li class="animated flipInX">
-											<i class="fa fa-text-width"></i>
-											<h5>Planing</h5>
-										</li>
-										<li class="animated flipInX">
-											<i class="fa fa-comment"></i>
-											<h5>Wordpress</h5>
-										</li>
-										<li class="animated flipInX">
-											<i class="fa fa-picture-o"></i>
-											<h5>Photography</h5>
-										</li>
+										<?php endforeach ?>
 									</ul>
 								</div>
 							</div>
@@ -557,12 +507,7 @@
 								</div>
 								<div class="contact-info">
 									<h4>Contact info</h4>
-									<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-									<ul>
-										<li><i class="fa fa-home"></i> lorem ipsum street</li>
-										<li><i class="fa fa-phone"></i> +399 (500) 321 9548</li>
-										<li><i class="fa fa-envelope"></i> info@domain.com</li>
-									</ul>
+									<p><?php echo $cv['cv_contact'];?></p>
 								</div>
 								<div class="contact-form">
 									<h4>Send us a message</h4>
@@ -599,14 +544,13 @@
 				<footer>
 					<div class="row">
 						<div class="col-md-7">
-							<p>&copy; 2014 Robb Armstrong. All Rights Reserved</p>
+							<p>&copy; 2014 <?php echo $cv['cv_user_name'];?>. All Rights Reserved</p>
 						</div>
 						<div class="col-md-5">
 							<ul class="social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+								<?php foreach($soc as $soc_i):?>
+								<li><a href="<?php echo $soc_i['soc_link'];?>"><i class="<?php echo $soc_i['soc_icon'];?>"></i></a></li>
+								<?php endforeach ?>
 							</ul>
 						</div>
 					</div>
