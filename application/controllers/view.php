@@ -11,6 +11,7 @@ class View extends CI_Controller {
 		$this->load->model("work_m");
 		$this->load->model("edu_m");
 		$this->load->model("skill_m");
+		$this->load->model("pflo_m");
 		$this->load->model("serv_m");
 		$this->load->model("soc_m");
 	}
@@ -55,6 +56,13 @@ class View extends CI_Controller {
 		{
 			$data['skill'][$sgroup['skill_group']]=$this->skill_m->getbygroup($cvid,$sgroup['skill_group']);
 		}
+        //先获取文件展示分组列表
+        $data['pgroup']=$this->pflo_m->getgroup($cvid);
+        //对每一个分类再循环查询，得出该类下全部作品展示，赋值给二维数组
+        foreach($data['pgroup'] as $pgroup)
+        {
+            $data['pflo'][$pgroup['pflo_group']]=$this->pflo_m->getbygroup($cvid,$pgroup['pflo_group']);
+        }
 		//服务项目
 		$data['serv']=$this->serv_m->getbycvid($cvid);
 		//社交链接列表

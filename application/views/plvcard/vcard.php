@@ -50,14 +50,14 @@
 	<![endif]-->
 	
 	<!-- Style Switch -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/yellow-black.css" title="yellow" media/sample="screen">
-   	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/violet-black.css" title="black" media/sample="screen" disabled="">
-	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/orange-black.css" title="orange" media/sample="screen" disabled="">
-	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/blue-black.css" title="blue" media/sample="screen" disabled="">
-	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/red-black.css" title="red" media/sample="screen" disabled="">
-	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/green-black.css" title="green" media/sample="screen" disabled="">
-	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/pink-black.css" title="pink" media/sample="screen" disabled="">
-	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/pale-green-black.css" title="pale-green" media/sample="screen" disabled="">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/yellow-black.css" title="yellow" media="screen">
+   	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/violet-black.css" title="black" media="screen" disabled="">
+	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/orange-black.css" title="orange" media="screen" disabled="">
+	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/blue-black.css" title="blue" media="screen" disabled="">
+	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/red-black.css" title="red" media="screen" disabled="">
+	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/green-black.css" title="green" media="screen" disabled="">
+	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/pink-black.css" title="pink" media="screen" disabled="">
+	<link rel="alternate stylesheet" type="text/css" href="<?php echo base_url();?>resources/plvcard/css/styleswitch/pale-green-black.css" title="pale-green" media="screen" disabled="">
 
 </head>
 <body ryt13417="1" style="background: rgb(217, 219, 221);">
@@ -75,7 +75,7 @@
 		<div class="row">
 			<div class="col-md-3 l-content">
 				<div class="profile-pic">
-					<div class="pic-bg"><img src="<?php echo base_url();?>resources/media/sample/avatar/profile-avatar.png" class="img-responsive" alt=""></div>
+					<div class="pic-bg"><img src="<?php echo base_url();?>resources/media/<?php echo $cv['cvid'];?>/avatar/profile-avatar.png" class="img-responsive" alt=""></div>
 				</div>
 				<nav>
 				<ul class="navigation">
@@ -221,168 +221,28 @@
 									<div class="row">
 										<ul id="filter-list" class="clearfix">
 											<li class="filter active" data-filter="all"><i class="fa fa-th"></i> All</li>
-											<li class="filter" data-filter="webdesign">Web Design</li>
-											<li class="filter" data-filter="appicon">App Icons</li>
-											<li class="filter" data-filter="iosappui">iOS App UI</li>
-											<li class="filter" data-filter="illustration">Illustration</li>
+											<?php foreach($pgroup as $pgroup_i): ?>
+											<li class="filter" data-filter="<?php echo strtolower($pgroup_i['pflo_group']);?>"><?php echo $pgroup_i['pflo_group'];?></li>
+											<?php endforeach ?>
 										</ul>
 										<ul id="portfolio">
-											<li class="item col-md-4 webdesign animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Example 1" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/1.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
+											<?php foreach($pgroup as $pgroup_i): ?>
+												<?php foreach($pflo[$pgroup_i['pflo_group']] as $pflo_i): ?>
+												<li class="item col-md-4 <?php echo strtolower($pgroup_i['pflo_group']);?> animated flipInX mix_all" style="display: inline-block; opacity: 1;">
+													<a title="<?php echo $pflo_i['pflo_descp'];?>" href="<?php echo $pflo_i['pflo_link'];?>" data-lightbox-gallery="gallery1" class="nivo-lbox">
+														<div class="folio-img">
+															<img src="<?php echo base_url();?>resources/media/<?php echo $cv['cvid'];?>/portfolio/<?php echo $pflo_i['pflo_imgurl'];?>" alt="" class="img-responsive" draggable="false">
+															<div class="overlay">
+																<div class="overlay-inner">
+																	<h4><?php echo $pflo_i['pflo_name'];?></h4>
+																	<p><?php echo $pflo_i['pflo_title'];?></p>
+																</div>
 															</div>
 														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 illustration animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Sample 2" href="https://www.youtube.com/watch?v=L9szn1QQfas" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/2.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 appicon animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="i&#39;m Number 3" href="http://vimeo.com/71071717" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/3.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 iosappui animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Example 4" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/4.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 iosappui animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Sample 5" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/5.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 illustration animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Lorem ipsum 6" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/6.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 webdesign animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Example 7" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/7.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 iosappui animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Sample 8" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/8.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 webdesign animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Project 9" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/9.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 illustration animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Example 10" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/10.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 appicon animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Item 11" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/11.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="item col-md-4 iosappui animated flipInX mix_all" style="display: inline-block; opacity: 1;">
-												<a title="Sample 12" href="<?php echo base_url();?>resources/media/sample/portfolio/1-big.jpg" data-lightbox-gallery="gallery1" class="nivo-lbox">
-													<div class="folio-img">
-														<img src="<?php echo base_url();?>resources/media/sample/portfolio/12.jpg" alt="" class="img-responsive" draggable="false">
-														<div class="overlay">
-															<div class="overlay-inner">
-																<h4>Cool App Design</h4>
-																<p>branding, logo</p>
-															</div>
-														</div>
-													</div>
-												</a>
-											</li>
+													</a>
+												</li>
+												<?php endforeach ?>
+											<?php endforeach ?>
 										</ul>
 									</div>
 								</div>
@@ -413,7 +273,7 @@
 									<article class="animated flipInX">
 										<div class="row">
 											<div class="col-md-5">
-												<img src="<?php echo base_url();?>resources/media/sample/blog/1(1).jpg" class="img-responsive" alt="" draggable="false">
+												<img src="<?php echo base_url();?>resources/media/<?php echo $cv['cvid'];?>/blog/1(1).jpg" class="img-responsive" alt="" draggable="false">
 											</div>
 											<div class="col-md-7">
 												<h3><a href="#">Standard Post with Image</a></h3>
@@ -437,7 +297,7 @@
 									<article class="animated flipInX">
 										<div class="row">
 											<div class="col-md-5">
-												<img src="<?php echo base_url();?>resources/media/sample/blog/2(1).jpg" class="img-responsive" alt="" draggable="false">
+												<img src="<?php echo base_url();?>resources/media/<?php echo $cv['cvid'];?>/blog/2(1).jpg" class="img-responsive" alt="" draggable="false">
 											</div>
 											<div class="col-md-7">
 												<h3><a href="#">Standard Post with Image</a></h3>
@@ -462,7 +322,7 @@
 									<article class="no-border animated flipInX">
 										<div class="row">
 											<div class="col-md-5">
-												<img src="<?php echo base_url();?>resources/media/sample/blog/3(1).jpg" class="img-responsive" alt="" draggable="false">
+												<img src="<?php echo base_url();?>resources/media/<?php echo $cv['cvid'];?>/blog/3(1).jpg" class="img-responsive" alt="" draggable="false">
 											</div>
 											<div class="col-md-7">
 												<h3><a href="#">Standard Post with Image</a></h3>
