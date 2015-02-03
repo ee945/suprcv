@@ -150,6 +150,7 @@
 										<li>
 											<h5><?php echo $work_i['work_company'];?></h5>
 											<span class="year"><i class="fa fa-calendar"></i>&nbsp;<?php echo $work_i['work_start'];?>&nbsp;-&nbsp;<?php echo $work_i['work_end'];?></span>
+											<span class="title"><i class="fa fa-user"></i><?php echo $work_i['work_title'];?></span>
 											<p><?php echo $work_i['work_descp'];?></p>
 										</li>
 										<?php endforeach ?>
@@ -163,6 +164,7 @@
 											<li>
 												<h5><?php echo $edu_i['edu_school'];?></h5>
 												<span class="year"><i class="fa fa-calendar"></i>&nbsp;<?php echo $edu_i['edu_start'];?>&nbsp;-&nbsp;<?php echo $edu_i['edu_end'];?></span>
+											    <span class="title"><i class="fa fa-pencil-square-o"></i><?php echo $edu_i['edu_major'];?></span>
 												<p><?php echo $edu_i['edu_descp'];?></p>
 											</li>
 										<?php endforeach ?>
@@ -176,7 +178,7 @@
 										<?php foreach($skill[$sgroup_i['skill_group']] as $s_item):?>
 										<li>
 											<p><?php echo $s_item['skill_name'];?><span><?php echo $s_item['skill_value'];?>%</span></p>
-											<div class="skills-bg"><span class="<?php echo $sgroup_i['skill_group'];?>" style="width: <?php echo $s_item['skill_value'];?>%;"></span></div>
+											<div class="skills-bg" alt="111"><span class="<?php echo $sgroup_i['skill_group'];?>" style="width: <?php echo $s_item['skill_value'];?>%;"></span></div>
 										</li>
 										<?php endforeach ?>
 									</ul>
@@ -361,8 +363,9 @@
 								</div>
 								<div class="map">
 									<div class="gmap">
-										<div id="map" style="position: relative; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);">
-										</div>
+                                        <div id="map" style="position: relative; overflow: hidden; transform: translateZ(0px);" >
+                                            <?php echo $cv['cv_map'];?>
+                                        </div>
 									</div>
 								</div>
 								<div class="contact-info">
