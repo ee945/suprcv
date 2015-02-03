@@ -471,6 +471,18 @@ a:hover {
 	margin-right: 5px;
 }
 
+.title {
+	color: #727272;
+	font-size: 1.1em;
+	font-style: italic;
+}
+
+.title i {
+	color: #aaaaaa;
+	margin-right: 5px;
+	margin-left: 15px;
+}
+
 .skills-info {
 	padding-bottom: 20px;
 	border-bottom: 1px solid #ededed;
