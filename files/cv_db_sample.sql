@@ -183,18 +183,18 @@ CREATE TABLE IF NOT EXISTS `cv_portfolio` (
 --
 
 INSERT INTO `cv_portfolio` (`id`, `pflo_name`, `pflo_title`, `pflo_descp`, `pflo_imgurl`, `pflo_link`, `pflo_group`, `cvid`) VALUES
-(1, 'Cool App Design', 'branding, logo', 'Example 1', '1.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'Web Design', 1),
+(1, 'Cool App Design', 'branding, logo', 'Example 1', '1.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'Web Design', 1),
 (2, 'Cool App Design', 'branding, logo', 'Sample 2', '2.jpg', 'https://www.youtube.com/watch?v=L9szn1QQfas', 'Illustration', 1),
 (3, 'Cool App Design', 'branding, logo', 'i''m Number 3', '3.jpg', 'http://vimeo.com/71071717', 'Web Design', 1),
-(4, 'Cool App Design', 'branding, logo', 'Example 4', '4.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'iOS App UI', 1),
-(5, 'Cool App Design', 'branding, logo', 'Sample 5', '5.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'iOS App UI', 1),
-(6, 'Cool App Design', 'branding, logo', 'Lorem ipsum 6', '6.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'Illustration', 1),
-(7, 'Cool App Design', 'branding, logo', 'Example 7', '7.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'Web Design', 1),
-(8, 'Cool App Design', 'branding, logo', 'Sample 8', '8.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'iOS App UI', 1),
-(9, 'Cool App Design', 'branding, logo', 'Project 9', '9.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'Web Design', 1),
-(10, 'Cool App Design', 'branding, logo', 'Example 10', '10.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'Illustration', 1),
-(11, 'Cool App Design', 'branding, logo', 'Item 11', '11.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'App Icons', 1),
-(12, 'Cool App Design', 'branding, logo', 'Sample 12', '12.jpg', 'http://localhost/cv/resources/media/sample/portfolio/1-big.jpg', 'iOS App UI', 1);
+(4, 'Cool App Design', 'branding, logo', 'Example 4', '4.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'iOS App UI', 1),
+(5, 'Cool App Design', 'branding, logo', 'Sample 5', '5.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'iOS App UI', 1),
+(6, 'Cool App Design', 'branding, logo', 'Lorem ipsum 6', '6.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'Illustration', 1),
+(7, 'Cool App Design', 'branding, logo', 'Example 7', '7.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'Web Design', 1),
+(8, 'Cool App Design', 'branding, logo', 'Sample 8', '8.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'iOS App UI', 1),
+(9, 'Cool App Design', 'branding, logo', 'Project 9', '9.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'Web Design', 1),
+(10, 'Cool App Design', 'branding, logo', 'Example 10', '10.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'Illustration', 1),
+(11, 'Cool App Design', 'branding, logo', 'Item 11', '11.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'App Icons', 1),
+(12, 'Cool App Design', 'branding, logo', 'Sample 12', '12.jpg', 'http://localhost/cv/resources/media/1/portfolio/1-big.jpg', 'iOS App UI', 1);
 
 -- --------------------------------------------------------
 
