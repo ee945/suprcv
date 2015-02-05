@@ -68,7 +68,8 @@ class View extends CI_Controller {
 		//社交链接列表
 		$data['soc']=$this->soc_m->getbycvid($cvid);
 
-		$this->load->view('plvcard/vcard',$data);
+		if($cv_lang=="en") $this->load->view('plvcard/vcard',$data);
+		if($cv_lang=="zh-cn") $this->load->view('plvcard/vcard_cn',$data);
 	}
 
 	public function access_sample()

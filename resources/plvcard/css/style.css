@@ -11,7 +11,7 @@ body, html {
 
 body {
 	background: #d9dbdd;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue","微软雅黑", Helvetica, Arial, sans-serif;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue","微软雅黑", Helvetica, Arial, sans-serif;
 	font-weight: 700;
 }
 

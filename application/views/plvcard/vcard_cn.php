@@ -13,7 +13,7 @@
 	<meta name="description" content="SuprCV Responsive Multipurpose HTML5 vCard">
 	<meta name="author" content="">
 
-	<title> Resume - <?php echo $cv['cv_user_name'];?>&nbsp;&nbsp;|&nbsp;&nbsp;SuprCV HTML5 vCard</title>
+    <title> 我的简历 - <?php echo $cv['cv_user_name']; ?>&nbsp;&nbsp;|&nbsp;&nbsp;SuprCV 电子名片系统</title>
 
 	<!-- Mobile Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,11 +79,11 @@
 				</div>
 				<nav>
 				<ul class="navigation">
-					<li class="flex-active"><a href="#">Profile <i class="fa fa-user"></i></a></li>
-					<li><a href="#">Resume <i class="fa fa-file-text"></i></a></li>
-					<li><a href="#">Work <i class="fa fa-briefcase"></i></a></li>
-					<li><a href="#">Blog <i class="fa fa-comment"></i></a></li>
-					<li><a href="#">Contact <i class="fa fa-envelope"></i></a></li>
+					<li class="flex-active"><a href="#">个人档案 <i class="fa fa-user"></i></a></li>
+					<li><a href="#">我的简历 <i class="fa fa-file-text"></i></a></li>
+					<li><a href="#">作品展示 <i class="fa fa-briefcase"></i></a></li>
+					<li><a href="#">我的博客 <i class="fa fa-comment"></i></a></li>
+					<li><a href="#">联系方式 <i class="fa fa-envelope"></i></a></li>
 				</ul>
 				</nav>
 			</div>
@@ -94,21 +94,21 @@
 						<!-- SECTION 1 - HOMEPAGE -->
 						<section class="no-display flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
 							<div class="profile" id="1">
-								<h2 class="animated fadeInDown">Hello, I am <span><?php echo $cv['cv_user_name'];?></span><br><?php echo $cv['cv_user_title'];?></h2>
+								<h2 class="animated fadeInDown">您好，我是 <span><?php echo $cv['cv_user_name'];?></span><br><?php echo $cv['cv_user_title'];?></h2>
 								<div class="sep1"></div>
 								<p class="animated fadeInDown"><?php echo $cv['cv_descp'];?></p>
 								<div class="personal-info col-md-12 no-padding animated flipInX">
-									<h4>Personal Info</h4>
+									<h4>基本信息</h4>
 									<div class="sep2"></div>
 									<ul>
 										<li>
-											<div class="p-info"><em>name</em><span><?php echo $cv['cv_user_name'];?></span></div>
+											<div class="p-info"><em>姓  名</em><span><?php echo $cv['cv_user_name'];?></span></div>
 										</li>
 										<li>
-											<div class="p-info"><em>date of birth</em><span><?php echo $user_birth;?></span></div>
+											<div class="p-info"><em>出生年月</em><span><?php echo $user_birth;?></span></div>
 										</li>
 										<li>
-											<div class="p-info"><em>e-mail</em><span><?php echo $cv['cv_user_mail'];?></span></div>
+											<div class="p-info"><em>电子邮件</em><span><?php echo $cv['cv_user_mail'];?></span></div>
 										</li>
 										<?php foreach($info as $info_i):?>
 										<li>
@@ -129,11 +129,11 @@
 								<div class="page-head animated fadeInDown">
 									<div class="row">
 										<div class="col-md-5">
-											<h3>Resume</h3>
+											<h3>简历</h3>
 										</div>
 										<div class="col-md-7">
 											<div class="np-main">
-												<p>Go to next/previous page</p>
+												<p>上一页 / 下一页</p>
 												<div class="np-controls">
 													<a href="#" class="previous"><i class="fa fa-arrow-circle-left"></i></a>
 													<a href="#" class="next"><i class="fa fa-arrow-circle-right"></i></a>
@@ -143,7 +143,7 @@
 									</div>
 								</div>
 								<div class="resume-info animated slideInLeft">
-									<h4>Work Experience</h4>
+									<h4>工作经历</h4>
 									<div class="sep2"></div>
 									<ul>
 										<?php foreach($work as $work_i):?>
@@ -157,7 +157,7 @@
 									</ul>
 								</div>
 								<div class="resume-info animated slideInLeft">
-									<h4>Education</h4>
+									<h4>教育背景</h4>
 									<div class="sep2"></div>
 									<ul>
 										<?php foreach($edu as $edu_i):?>
@@ -185,7 +185,7 @@
 								</div>
 								<?php endforeach ?>
 								<div class="services-info">
-									<h4>Services</h4>
+									<h4>服务项目</h4>
 									<div class="sep2"></div>
 									<ul>
 										<?php foreach ($serv as $serv_i):?>
@@ -206,11 +206,11 @@
 								<div class="page-head animated fadeInDown">
 									<div class="row">
 										<div class="col-md-5">
-											<h3>Portfolio</h3>
+											<h3>作品展示</h3>
 										</div>
 										<div class="col-md-7">
 											<div class="np-main">
-												<p>Go to next/previous page</p>
+												<p>上一页 / 下一页</p>
 												<div class="np-controls">
 													<a href="#" class="previous"><i class="fa fa-arrow-circle-left"></i></a>
 													<a href="#" class="next"><i class="fa fa-arrow-circle-right"></i></a>
@@ -258,11 +258,11 @@
 								<div class="page-head animated fadeInDown">
 									<div class="row">
 										<div class="col-md-5">
-											<h3>Blog</h3>
+											<h3>博客</h3>
 										</div>
 										<div class="col-md-7">
 											<div class="np-main">
-												<p>Go to next/previous page</p>
+												<p>上一页 / 下一页</p>
 												<div class="np-controls">
 													<a href="#" class="previous"><i class="fa fa-arrow-circle-left"></i></a>
 													<a href="#" class="next"><i class="fa fa-arrow-circle-right"></i></a>
@@ -348,11 +348,11 @@
 								<div class="page-head animated fadeInDown">
 									<div class="row">
 										<div class="col-md-5">
-											<h3>Contact Me</h3>
+											<h3>联系我</h3>
 										</div>
 										<div class="col-md-7">
 											<div class="np-main">
-												<p>Go to next/previous page</p>
+												<p>上一页 / 下一页</p>
 												<div class="np-controls">
 													<a href="#" class="previous"><i class="fa fa-arrow-circle-left"></i></a>
 													<a href="#" class="next"><i class="fa fa-arrow-circle-right"></i></a>
@@ -369,32 +369,32 @@
 									</div>
 								</div>
 								<div class="contact-info">
-									<h4>Contact info</h4>
+									<h4>联系方式</h4>
 									<p><?php echo $cv['cv_contact'];?></p>
 								</div>
 								<div class="contact-form">
-									<h4>Send me a message</h4>
+									<h4>给我留言</h4>
 									<form id="contactForm" action="http://premiumlayers.com/demos/vcard/php/contact.php" method="post" class="positioned">
 										<div class="row">
 											<div class="col-md-4">
-												<input type="text" name="senderName" id="senderName" placeholder="name">
-												<input type="email" name="senderEmail" id="senderEmail" placeholder="e-mail">
-												<input type="text" name="subject" id="subject" placeholder="Subject">
+												<input type="text" name="senderName" id="senderName" placeholder="您的名字">
+												<input type="email" name="senderEmail" id="senderEmail" placeholder="您的邮箱">
+												<input type="text" name="subject" id="subject" placeholder="留言标题">
 											</div>
 											<div class="col-md-8">
-												<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-												<button type="submit">Send Message</button>
+												<textarea name="message" id="message" rows="6" placeholder="您的信息"></textarea>
+												<button type="submit">发送信息</button>
 											</div>
 										</div>
 									</form>
 									<div id="successMessage" class="successmessage">
-										<p><span class="success-ico"></span> Thanks for sending your message! We'll get back to you shortly.</p>
+										<p><span class="success-ico"></span> 感谢您的留言，我会尽快回复！</p>
 									</div>
 									<div id="failureMessage" class="errormessage">
-										<p><span class="error-ico"></span> There was a problem sending your message. Please try again.</p>
+										<p><span class="error-ico"></span> 发送信息失败，请重试！</p>
 									</div>
 									<div id="incompleteMessage" class="statusMessage">
-										<p>Please complete all the fields in the form before sending.</p>
+										<p>请填写完整信息</p>
 									</div>
 								</div>
 							</div>
@@ -407,7 +407,7 @@
 				<footer>
 					<div class="row">
 						<div class="col-md-7">
-							<p>&copy; <?php echo date('Y');?> <?php echo $cv['cv_user_name'];?>. All Rights Reserved</p>
+                            <p>&copy; <?php echo date('Y');?> <?php echo $cv['cv_user_name'];?>. 版权所有</p>
 						</div>
 						<div class="col-md-5">
 							<ul class="social">
@@ -428,19 +428,19 @@
 	<span class="corner"><span class="cog"></span></span>
 	<div id="options" class="visible">
 		<div class="options-head">
-			Style Switcher
+			切换风格
 		</div>	
 
 		<div class="options-segment clearfix headers-sel">
-			<h6 class="color-head">Body Background</h6>
+			<h6 class="color-head">背景</h6>
 				<ul class="version">
-                    <li><a class="lite bg-lite">Light</a></li>
-                    <li><a class="dark bg-dark">Dark</a></li>
+                    <li><a class="lite bg-lite">明亮</a></li>
+                    <li><a class="dark bg-dark">暗黑</a></li>
 				</ul>
 		</div>
 
 		<div class="options-segment clearfix colors-sel">
-			<h6 class="color-head">Color Scheme</h6>
+			<h6 class="color-head">主题色彩</h6>
 			<ul class="color-scheme clearfix">
 				<li class="yellow"><a href="#" data-rel="yellow" class="styleswitch"></a></li>
 				<li class="green"><a href="#" data-rel="green" class="styleswitch"></a></li>
