@@ -8,17 +8,21 @@
     <style type="text/css">
         body{
             background:#555;
+            background-image:url(<?php echo base_url('resources/common/admin/access-bg.jpg');?>);
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-attachment:fixed;
         }
 
         .login-box{
             width:80%;
-            height:200;
-            margin-top:100px;
+            height:50%;
+            margin-top:40%;
             margin-left:auto;
             margin-right:auto;
             padding:50px;
             border:0px solid grey;
-            border-radius:5px;
+            border-radius:10px;
         }
     </style>
 </head>
